@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="bootstrap.css">
+  <link rel="stylesheet" href="nuvbercustom.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+  <script src="bootstrap.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- ナビゲーションバーの開始 -->
+  <nav class="navbar navbar-expand-md navbar-light bg-white fixed-top navbar-custom">
+    <div class="container-fluid">
+      <!-- ブランドロゴ -->
+      <a class="navbar-brand" href="https://www.dendai.ac.jp/">
+        <span class="navbar-brand-title">東京電機女子大学</span>
+        <span class="navbar-brand-subtitle">TokyoDenkiGirlsUniversity</span>
+      </a>
+      <!-- トグルボタン。クリックするとナビゲーションメニューが表示される -->
+      <button class="navbar-toggler" type="button" onclick="toggleNavbar()" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <!-- ナビゲーションメニュー -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-flag"></i> 受験生応援ページ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-language"></i> ENGLISH</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-file-alt"></i> 資料請求</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.google.co.jp/maps" target="_blank"><i class="fas fa-map-marker-alt"></i> アクセス</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.google.co.jp/" target="_blank"><i class="fas fa-search"></i> 検索</a>
+          </li>
+        </ul>
+        
+        <!-- サイドバーメニューボタン -->
+        <button class="btn menu-button" type="button" onclick="toggleMenuButton()">
+          <div class="menu-lines">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+          <span class="menu-text">MENU</span>
+        </button>
+        
+        <!-- サイドバー -->
+        <div id="sidebar" class="sidebar">
+          <a href="javascript:void(0)" class="closebtn" onclick="toggleMenuButton()">&times;</a>
+          <a href="#schedule-section" onclick="scrollToSection(event, 'schedule-section')">SCHEDULE</a>
+          <a href="#event-section" onclick="scrollToSection(event, 'event-section')">EVENTS</a>
+          <a href="#course-section" onclick="scrollToSection(event, 'course-section')">COURSE</a>
+          <a href="#sns-section" onclick="scrollToSection(event, 'sns-section')">SNS</a>
+          <a href="#request-documents-section" onclick="scrollToSection(event, 'request-documents-section')">REQUEST DOCUMENTS</a>
+          <a href="#contact-section" onclick="scrollToSection(event, 'contact-section')">CONTACT</a>
+        </div>
+        
+        <!-- メニューコンテンツ -->
+        <div class="menu-content">
+          <ul class="menu-list">
+            <li><a href="#schedule-section" onclick="scrollToSection(event, 'schedule-section')">SCHEDULE</a></li>
+            <li><a href="#event-section" onclick="scrollToSection(event, 'event-section')">EVENTS</a></li>
+            <li><a href="#course-section" onclick="scrollToSection(event, 'course-section')">COURSE</a></li>
+            <li><a href="#sns-section" onclick="scrollToSection(event, 'sns-section')">SNS</a></li>
+            <li><a href="#request-documents-section" onclick="scrollToSection(event, 'request-documents-section')">REQUEST DOCUMENTS</a></li>
+            <li><a href="#contact-section" onclick="scrollToSection(event, 'contact-section')">CONTACT</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- メインビジュアル -->
+  <div class="container-fluid p-0">
+    <div class="main-visual">
+      <img src="./img/daigakusei.jpg" alt="Main Visual" class="img-fluid w-100">
+      <div class="main-visual-text">
+        <p>OPEN <br> CAMPUS <br></p>
+        <span class="main-visual-date">2024.08.20~08.27</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- スケジュールセクション -->
+  <div class="container schedule-section text-center">
+    <div id="schedule-section" class="container schedule-section text-center"></div>
+    <h2 class="schedule-title">SCHEDULE</h2>
+    <p class="schedule-subtitle">開催日程</p>
+    <div class="underline"></div>
+    <div class="row justify-content-center">
+      <!-- 8月20日 -->
+      <div class="col-6 col-md-3">
+        <div class="schedule-card">
+          <div class="schedule-card-date">SAT</div>
+          <div class="schedule-card-day">8.20</div>
+          <button class="btn btn-pink">10:00~16:00</button>
+        </div>
+      </div>
+      <!-- 8月21日 -->
+      <div class="col-6 col-md-3">
+        <div class="schedule-card">
+          <div class="schedule-card-date">SUN</div>
+          <div class="schedule-card-day">8.21</div>
+          <button class="btn btn-pink">10:00~16:00</button>
+        </div>
+      </div>
+      <!-- 8月22日 -->
+      <div class="col-6 col-md-3">
+        <div class="schedule-card">
+          <div class="schedule-card-date">MON</div>
+          <div class="schedule-card-day">8.22</div>
+          <button class="btn btn-info">13:00~17:00</button>
+        </div>
+      </div>
+      <!-- 8月23日 -->
+      <div class="col-6 col-md-3">
+        <div class="schedule-card">
+          <div class="schedule-card-date">TUE</div>
+          <div class="schedule-card-day">8.23</div>
+          <button class="btn btn-info">13:00~17:00</button>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <!-- 8月24日 -->
+      <div class="col-6 col-md-3">
+        <div class="schedule-card">
+          <div class="schedule-card-date">WED</div>
+          <div class="schedule-card-day">8.24</div>
+          <button class="btn btn-info">13:00~17:00</button>
+        </div>
+      </div>
+      <!-- 8月25日 -->
+      <div class="col-6 col-md-3">
+        <div class="schedule-card">
+          <div class="schedule-card-date">THU</div>
+          <div class="schedule-card-day">8.25</div>
+          <button class="btn btn-info">13:00~17:00</button>
+        </div>
+      </div>
+      <!-- 8月26日 -->
+      <div class="col-6 col-md-3">
+        <div class="schedule-card">
+          <div class="schedule-card-date">FRI</div>
+          <div class="schedule-card-day">8.26</div>
+          <button class="btn btn-info">13:00~17:00</button>
+        </div>
+      </div>
+      <!-- 8月27日 -->
+      <div class="col-6 col-md-3">
+        <div class="schedule-card">
+          <div class="schedule-card-date">SAT</div>
+          <div class="schedule-card-day">8.27</div>
+          <button class="btn btn-pink">10:00~16:00</button>
+        </div>
+      </div>
+    </div>
+    <p class="schedule-note">※曜日を押すとお申込みフォームへ移動します。</p>
+  </div>
+
+  <!-- イベントセクション -->
+  <div class="container event-section text-center">
+    <div id="event-section" class="container event-section text-center"></div>
+    <h2 class="event-title">EVENTS</h2>
+    <p class="event-subtitle">イベント</p>
+    <div class="underline"></div>
+    <div class="event-title-bar">
+      <span>学びの魅力を体験</span>
+    </div>
+    <div class="row justify-content-center">
+      <!-- イベント1 -->
+      <div class="col-12 col-md-6 mb-4">
+        <div class="card">
+          <img class="card-img-top" src="img/setumei.jpg" alt="Event 1">
+          <div class="card-body">
+            <h5 class="card-title">学科別ガイダンス</h5>
+            <h6 class="card-subtitle">~学科紹介~</h6>
+            <p class="card-text">学べる内容やカリキュラムを学科別に紹介。大学で学びたいことを見つけよう。</p>
+          </div>
+        </div>
+      </div>
+      <!-- イベント2 -->
+      <div class="col-12 col-md-6 mb-4">
+        <div class="card">
+          <img class="card-img-top" src="img/zyugyou.jpg" alt="Event 2">
+          <div class="card-body">
+            <h5 class="card-title">学科別ガイダンス</h5>
+            <h6 class="card-subtitle">~模擬授業~</h6>
+            <p class="card-text">学科の特色がわかるさまざまなテーマの授業を実施。一足先に大学気分を味わおう。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="event-title-bar2">
+      <span>大学のリアルを知る</span>
+    </div>
+    <div class="row justify-content-center">
+      <!-- イベント3 -->
+      <div class="col-12 col-md-6 mb-4">
+        <div class="card">
+          <img class="card-img-top" src="img/gakkou.jpg" alt="Event 3">
+          <div class="card-body">
+            <h5 class="card-title">キャンパスツアー</h5>
+            <p class="card-text">実際の学生がキャンパスをご案内。お気に入りスポットを見つけよう。学生から貴重なお話が聞けるかも。</p>
+          </div>
+        </div>
+      </div>
+      <!-- イベント4 -->
+      <div class="col-12 col-md-6 mb-4">
+        <div class="card">
+          <img class="card-img-top" src="img/soudan.jpg" alt="Event 4">
+          <div class="card-body">
+            <h5 class="card-title">教員・学生トークコーナー</h5>
+            <p class="card-text">大学の雰囲気・授業・サークル活動・就職など、大学生活の疑問を今のうちに解消しましょう。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="event-title-bar2">
+      <span>自分に合った入試を見つける</span>
+    </div>
+    <div class="row justify-content-center">
+      <!-- イベント5 -->
+      <div class="col-12 col-md-6 mb-4">
+        <div class="card">
+          <img class="card-img-top" src="img/setsumei.png" alt="Event 5">
+          <div class="card-body">
+            <h5 class="card-title">入試ガイダンス（08.20~23）</h5>
+            <p class="card-text">総合型選抜・自己推薦入試・学校推薦型選抜を志望する受験生対象に特別講座を実施。合格に向けた準備をしましょう。</p>
+          </div>
+        </div>
+      </div>
+      <!-- イベント6 -->
+      <div class="col-12 col-md-6 mb-4">
+        <div class="card">
+          <img class="card-img-top" src="img/setumei2.png" alt="Event 6">
+          <div class="card-body">
+            <h5 class="card-title">入試ガイダンス（08.25~27）</h5>
+            <p class="card-text">入試ラインナップと各入試の特色を紹介。自分の強みを発揮できる入試方法をチェックしましょう。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-course">先輩の例はこちら ></button>
+  </div>
+
+ <!-- 学科紹介セクション -->
+<div class="container course-section text-center">
+  <div id="course-section" class="container course-section text-center"></div>
+  <h2 class="course-title">COURSE</h2>
+  <p class="course-subtitle">学科紹介</p>
+  <div class="underline"></div>
+  <div class="row">
+    <!-- 情報学部 -->
+    <div class="col-12 col-sm-6 col-md-4">
+      <div class="card">
+        <img class="card-img-top" src="./img/zyouhougakubu.jpg" alt="情報学部">
+        <div class="card-body">
+          <h5 class="card-title title-zyouhou">情報学部</h5>
+          <p class="card-text">情報学部には、情報システム学科、情報社会学科、情報メディア学科があり、あらゆる「情報」をさまざまな視点から研究する学部です。</p>
+          <a href="#" class="btn btn-zyouhou">詳細 ></a>
+        </div>
+      </div>
+    </div>
+    <!-- 理工学部 -->
+    <div class="col-12 col-sm-6 col-md-4">
+      <div class="card">
+        <img class="card-img-top" src="./img/rikougakubu.jpg" alt="理工学部">
+        <div class="card-body">
+          <h5 class="card-title title-rikou">理工学部</h5>
+          <p class="card-text">理工学部には、数学科、物理科、応用化学科、建築学科、電気電子工学科があり、幅広い研究分野を学べるため将来の選択肢が広がります。</p>
+          <a href="#" class="btn btn-rikou">詳細 ></a>
+        </div>
+      </div>
+    </div>
+    <!-- 農学部 -->
+    <div class="col-12 col-sm-6 col-md-4">
+      <div class="card">
+        <img class="card-img-top" src="./img/nougakubu.jpg" alt="農学部">
+        <div class="card-body">
+          <h5 class="card-title title-nougaku">農学部</h5>
+          <p class="card-text">農学部には、作物栽培学科、育種学科、農芸化学科、農業工学科があり、キャンパスの近くに農場を持っているため実践的な学習が出来ます。</p>
+          <a href="#" class="btn btn-nougaku">詳細 ></a>
+        </div>
+      </div>
+    </div>
+    <!-- 経済学部 -->
+    <div class="col-12 col-sm-6 col-md-4">
+      <div class="card">
+        <img class="card-img-top" src="./img/keizaigakubu.jpg" alt="経済学部">
+        <div class="card-body">
+          <h5 class="card-title title-keizai">経済学部</h5>
+          <p class="card-text">経済学部には、国際経済学科、現代ビジネス学科、環境経済学科があり、経済学の学びから分析力、問題解決力、判断力を学びます。</p>
+          <a href="#" class="btn btn-keizai">詳細 ></a>
+        </div>
+      </div>
+    </div>
+    <!-- 文学部 -->
+    <div class="col-12 col-sm-6 col-md-4">
+      <div class="card">
+        <img class="card-img-top" src="./img/bungakubu.jpg" alt="文学部">
+        <div class="card-body">
+          <h5 class="card-title title-bungaku">文学部</h5>
+          <p class="card-text">文学部では、日本文学科、心理学科、史学科があり、人間に対する理解を一層深め物事を深く考える能力を身につけられます。</p>
+          <a href="#" class="btn btn-bungaku">詳細 ></a>
+        </div>
+      </div>
+    </div>
+    <!-- 社会学部 -->
+    <div class="col-12 col-sm-6 col-md-4">
+      <div class="card">
+        <img class="card-img-top" src="./img/syakaigakubu.jpeg" alt="社会学部">
+        <div class="card-body">
+          <h5 class="card-title title-syakai">社会学部</h5>
+          <p class="card-text">メディア社会学科、社会福祉学科、社会環境学科があり、あらゆる社会現象を科学的に分析します。就活に強い学科となっています。</p>
+          <a href="#" class="btn btn-syakai">詳細 ></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- SNSセクション -->
+<div class="container sns-section text-center">
+  <div id="sns-section" class="container sns-section text-center"></div>
+  <h2 class="sns-title">SNS</h2>
+  <p class="sns-subtitle">各種SNS</p>
+  <div class="underline"></div>
+  <div class="social-icons">
+    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter" style="color: #CC33CC;"></i></a>
+    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" style="color: #CC33CC;"></i></a>
+    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram" style="color: #CC33CC;"></i></a>
+    <a href="https://line.me" target="_blank"><i class="fab fa-line" style="color: #CC33CC;"></i></a>
+    <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube" style="color: #CC33CC;"></i></a>
+  </div>
+</div>
+
+<!-- 資料請求セクション -->
+<div class="container request-documents-section text-center">
+  <div id="request-documents-section" class="container request-documents-section text-center"></div>
+  <h2 class="request-documents-title">REQUEST DOCUMENTS</h2>
+  <p class="request-documents-subtitle">資料請求</p>
+  <div class="underline"></div>
+  <button class="btn btn-request-documents">資料請求はここから ></button>
+</div>
+
+<!-- お問い合わせセクション -->
+<div class="container contact-section text-center">
+  <div id="contact-section" class="container contact-section text-center"></div>
+  <h2 class="contact-title">CONTACT</h2>
+  <p class="contact-subtitle">お問い合わせ</p>
+  <div class="underline"></div>
+  <div class="contact-info">
+    <p>東京電機女子大学　広報・入試センター</p>
+    <p>〒120-8551 東京都足立区千住旭町5番</p>
+    <p>TEL：03-5284-5222</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 text-center">
+    <ul class="footer-bottom-links">
+      <li><a href="#">サイトマップ</a></li>
+      <li><a href="#">サイトポリシー</a></li>
+      <li><a href="#">プライバシーポリシー</a></li>
+      <li><a href="#">採用情報</a></li>
+    </ul>
+    <p>&copy; 2024 FIFI, Inc.</p>
+  </div>
+</div>
+
+<a href="#" id="page_top" class="page-top"></a>
+
+<script>
+  // ナビゲーションバーの表示/非表示を切り替える関数
+  function toggleNavbar() {
+    const navbar = document.getElementById("navbarNav");
+    if (navbar.classList.contains("show")) {
+      navbar.classList.remove("show");
+    } else {
+      navbar.classList.add("show");
+    }
+  }
+</script>
+
+<script>
+  // スクロール時にボタンを表示/非表示にするスクリプト
+  window.addEventListener('scroll', function() {
+    const pageTopButton = document.getElementById('page_top');
+    if (window.scrollY > 300) { // スクロール位置が300pxを超えたら表示
+      pageTopButton.style.display = 'block';
+    } else {
+      pageTopButton.style.display = 'none';
+    }
+  });
+
+  // スムーススクロールのスクリプト
+  document.getElementById('page_top').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>
+
+<script>
+  // サイドバーメニューの表示/非表示を切り替える関数
+  function toggleMenuButton() {
+    const sidebar = document.getElementById("sidebar");
+    if (sidebar.style.width === "250px") {
+      sidebar.style.width = "0";
+    } else {
+      sidebar.style.width = "250px";
+    }
+  }
+
+  // セクションへのスムーススクロールとサイドバーメニューを閉じる関数
+  function scrollToSection(event, sectionId) {
+    event.preventDefault(); // デフォルトのリンク動作を防止
+    const section = document.getElementById(sectionId);
+    section.scrollIntoView({ behavior: 'smooth' });
+
+    // メニューを閉じる
+    const sidebar = document.getElementById("sidebar");
+    sidebar.style.width = "0";
+  }
+</script>
+
+</body>
+</html>

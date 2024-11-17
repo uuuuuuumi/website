@@ -1,0 +1,34 @@
+.navbar-custom {
+    background-color: #4CAF50; /* Change this to the desired color */
+    height: 70px; /* Increase the height */
+  }
+  .navbar-nav .nav-item {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+  }
+  .navbar-nav .nav-item::after {
+    content: "|";
+    margin-left: 15px;
+  }
+  .navbar-nav .nav-item:last-child::after {
+    content: "";
+  }
+  .btn-custom1 {
+    background-color: #ff9800; /* Change this to the desired button color */
+    color: white;
+    margin-right: 15px;
+  }
+  .btn-custom1:hover {
+    background-color: #e68900; /* Slightly darker shade on hover */
+    color: white;
+  }
+
+  .btn-custom2 {
+    background-color: #EB97A8; /* Change this to the desired button color */
+    color: white;
+  }
+  .btn-custom2:hover {
+    background-color: #dba4af; /* Slightly darker shade on hover */
+    color: white;
+  }

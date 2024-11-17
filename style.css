@@ -1,0 +1,796 @@
+/* 全体のスタイル */
+body {
+    font-family: Arial, sans-serif; /* フォントの設定 */
+    margin: 0; /* ページの余白をなくす */
+    padding: 0; /* ページのパディングをなくす */
+    background-color: #fff; /* 背景色を白に設定 */
+}
+
+/* ナビゲーションバーのスタイル */
+.navbar {
+    padding: 10px 0; /* 上下のパディングを設定 */
+    position: fixed; /* 固定位置に設定 */
+    width: 100%; /* 幅を100%に設定 */
+    top: 0; /* ページの上部に固定 */
+    z-index: 1000; /* z-indexを設定して前面に表示 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 下部に影をつける */
+    background-color: #e0b2b2; /* ナビゲーションバーの背景色 */
+}
+
+/* カスタムナビゲーションバーのスタイル */
+.navbar-custom {
+    background-color: #e0b2b2 !important; /* 背景色を#e0b2b2に変更 */
+    padding: 15px 0; /* 縦幅を大きくする */
+    font-family: 'Ronde-B', sans-serif; /* ロンドBフォント */
+}
+
+/* ナビゲーションバーのロゴスタイル */
+.navbar-logo {
+    width: 50px; /* ロゴの幅を設定 */
+    height: auto; /* 高さを自動調整 */
+}
+
+/* ナビゲーションバーのタイトルスタイル */
+.navbar-brand-title {
+    font-size: 24px; /* フォントサイズを設定 */
+    font-weight: bold; /* フォントウェイトを設定 */
+    color: #4a2c2a; /* テキストの色を設定 */
+    margin-left: 10px; /* 左のマージンを設定 */
+    font-family: "Noto Serif JP", serif; /* フォントファミリを設定 */
+}
+
+/* ナビゲーションバーのサブタイトルスタイル */
+.navbar-brand-subtitle {
+    font-size: 14px; /* フォントサイズを設定 */
+    font-weight: normal; /* フォントウェイトを設定 */
+    color: #4a2c2a; /* テキストの色を設定 */
+    margin-left: 10px; /* 左のマージンを設定 */
+    font-family: "Noto Serif JP", serif; /* フォントファミリを設定 */
+}
+
+/* ナビゲーションリンクのスタイル */
+.nav-link {
+    color: #4a2c2a; /* リンクの色を設定 */
+    font-size: 16px; /* フォントサイズを設定 */
+    display: flex; /* フレックスボックスレイアウトを使用 */
+    align-items: center; /* 垂直方向の中央揃え */
+    padding: 10px 15px; /* パディングを設定 */
+    position: relative; /* 相対位置に設定 */
+    text-decoration: none; /* テキストの装飾をなしにする */
+}
+
+/* ナビゲーションリンクのアイコンスタイル */
+.nav-link i {
+    margin-right: 5px; /* 右のマージンを設定 */
+}
+
+/* ナビゲーションリンクのアンダーバースタイル */
+.nav-link::after {
+    content: ''; /* 空のコンテンツを設定 */
+    display: block; /* ブロック要素として表示 */
+    width: 0; /* 初期幅を0に設定 */
+    height: 2px; /* 高さを2pxに設定 */
+    background: #4a2c2a; /* アンダーバーの色を設定 */
+    transition: width 0.3s; /* 幅の変更を0.3秒かけて行う */
+    position: absolute; /* 絶対位置に設定 */
+    bottom: 0; /* 下端に配置 */
+    left: 0; /* 左端に配置 */
+}
+
+/* ナビゲーションリンクのホバースタイル */
+.nav-link:hover::after {
+    width: 100%; /* 幅を100%に拡張 */
+}
+
+/* メニューコンテンツのスタイル */
+.menu-content {
+    display: none; /* 初期状態で非表示 */
+    position: fixed; /* 固定位置に設定 */
+    top: 100px; /* ナビゲーションバーの下に表示 */
+    right: 20px; /* 右端から20pxの位置に配置 */
+    background-color: white; /* 背景色を白に設定 */
+    border: 1px solid #ccc; /* 枠線を設定 */
+    border-radius: 5px; /* 角を丸くする */
+    padding: 10px; /* パディングを設定 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 影をつける */
+    z-index: 1001; /* ナビゲーションバーの上に表示 */
+}
+
+.menu-list {
+    list-style-type: none; /* リストスタイルをなしにする */
+    padding: 0; /* パディングをなしにする */
+    margin: 0; /* マージンをなしにする */
+}
+
+.menu-list li {
+    margin: 10px 0; /* 上下のマージンを設定 */
+}
+
+.menu-list a {
+    text-decoration: none; /* テキストの装飾をなしにする */
+    color: #D70076; /* メニューリンクの色を設定 */
+    font-size: 16px; /* フォントサイズを設定 */
+    font-family: 'Noto Serif', sans-serif; /* フォントファミリを設定 */
+}
+
+.menu-list a:hover {
+    text-decoration: underline; /* ホバー時のテキスト装飾を設定 */
+}
+
+/* メニューボタンのスタイル */
+.menu-button {
+    background-color: #D70076; /* 背景色を設定 */
+    color: white; /* テキストの色を設定 */
+    border: none; /* 枠線をなしにする */
+    padding: 10px; /* パディングを設定 */
+    border-radius: 5px; /* 角を丸くする */
+    font-family: 'Noto Serif', sans-serif; /* フォントファミリを設定 */
+    font-size: 16px; /* フォントサイズを設定 */
+    display: flex; /* フレックスボックスレイアウトを使用 */
+    align-items: center; /* 垂直方向の中央揃え */
+    justify-content: center; /* 水平方向の中央揃え */
+    flex-direction: column; /* フレックス方向を縦に設定 */
+    width: 80px; /* 幅を80pxに設定 */
+    height: 80px; /* 高さを80pxに設定 */
+    transition: background-color 0.3s; /* 背景色の変更を0.3秒かけて行う */
+}
+
+.menu-button:hover {
+    background-color: #D70076; /* ホバー時の背景色を同じに設定 */
+}
+
+.menu-lines {
+    display: flex; /* フレックスボックスレイアウトを使用 */
+    flex-direction: column; /* フレックス方向を縦に設定 */
+    align-items: center; /* 垂直方向の中央揃え */
+    justify-content: center; /* 水平方向の中央揃え */
+    gap: 4px; /* 要素間の間隔を設定 */
+}
+
+.menu-lines .line {
+    width: 20px; /* 幅を設定 */
+    height: 2px; /* 高さを設定 */
+    background-color: white; /* 背景色を白に設定 */
+}
+
+.menu-text {
+    margin-top: 5px; /* 上のマージンを設定 */
+    font-size: 12px; /* フォントサイズを設定 */
+    letter-spacing: 1px; /* 文字間隔を設定 */
+    text-align: center; /* テキストを中央揃え */
+    font-family: 'Noto Serif', sans-serif; /* フォントファミリを設定 */
+}
+
+/* サイドバーメニューのスタイル */
+.sidebar {
+    height: 100%; /* 高さを100%に設定 */
+    width: 0; /* 初期幅を0に設定 */
+    position: fixed; /* 固定位置に設定 */
+    z-index: 1000; /* z-indexを設定して前面に表示 */
+    top: 0; /* ページの上部に固定 */
+    right: 0; /* ページの右端に固定 */
+    background-color: #D70076; /* 背景色を設定 */
+    overflow-x: hidden; /* 横方向のスクロールを無効にする */
+    transition: 0.5s; /* 幅の変更を0.5秒かけて行う */
+    padding-top: 60px; /* 上部のパディングを設定 */
+}
+
+/* サイドバー内のリンクのスタイル */
+.sidebar a {
+    padding: 8px 8px 8px 32px; /* パディングを設定 */
+    text-decoration: none; /* テキストの装飾をなしにする */
+    font-size: 20px; /* フォントサイズを設定 */
+    font-family: 'Noto Serif', sans-serif; /* フォントファミリを設定 */
+    color: #f1f1f1; /* テキストの色を設定 */
+    display: block; /* ブロック要素として表示 */
+    position: relative; /* 相対位置に設定 */
+    transition: 0.3s; /* 変化を0.3秒かけて行う */
+}
+
+/* サイドバーリンクのアンダーバースタイル */
+.sidebar a::after {
+    content: ''; /* 空のコンテンツを設定 */
+    display: block; /* ブロック要素として表示 */
+    width: 0; /* 初期幅を0に設定 */
+    height: 2px; /* 高さを2pxに設定 */
+    background: #f1f1f1; /* アンダーバーの色を設定 */
+    transition: width 0.3s; /* 幅の変更を0.3秒かけて行う */
+    position: absolute; /* 絶対位置に設定 */
+    bottom: 0; /* 下端に配置 */
+    left: 0; /* 左端に配置 */
+}
+
+/* サイドバーリンクのホバースタイル */
+.sidebar a:hover::after {
+    width: 100%; /* 幅を100%に拡張 */
+}
+
+/* サイドバーの閉じるボタンのスタイル */
+.sidebar .closebtn {
+    position: absolute; /* 絶対位置に設定 */
+    top: 0; /* 上端に配置 */
+    right: 25px; /* 右端から25pxの位置に配置 */
+    font-size: 36px; /* フォントサイズを設定 */
+    margin-left: 50px; /* 左のマージンを設定 */
+    font-family: 'Arial', sans-serif; /* フォントファミリを設定 */
+    text-decoration: none; /* テキストの装飾をなしにする */
+}
+
+/* サイドバーの閉じるボタンのホバースタイル */
+.sidebar .closebtn:hover::after {
+    width: 0; /* アンダーバーを非表示にする */
+}
+
+/* ナビゲーションバーのスタイル */
+.navbar-collapse.collapse {
+    display: none; /* 初期状態で非表示 */
+}
+
+.navbar-collapse.collapse.show {
+    display: block; /* 表示状態にする */
+    position: fixed; /* 固定位置に設定 */
+    top: 50%; /* 上端から50%の位置に配置 */
+    left: 50%; /* 左端から50%の位置に配置 */
+    transform: translate(-50%, -50%); /* 中央に揃える */
+    width: 80%; /* 幅を80%に設定 */
+    background-color: rgba(255, 255, 255, 0.9); /* 背景色を設定 */
+    padding: 20px; /* パディングを設定 */
+    border-radius: 10px; /* 角を丸くする */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影をつける */
+    z-index: 1050; /* 前面に表示 */
+}
+
+.navbar-toggler {
+    z-index: 1060; /* メニューの上に表示されるように設定 */
+}
+
+/* メインビジュアルセクションのスタイル */
+.main-visual {
+    position: relative; /* 相対位置に設定 */
+    margin-top: 60px; /* ナビゲーションバーの高さに応じて調整 */
+    text-align: center; /* テキストを中央揃え */
+    background-color: #e0b2b2; /* 背景色を設定 */
+}
+
+.main-visual img {
+    width: 100%; /* 幅を100%に設定 */
+    height: 800px; /* 画像の高さを調整 */
+    object-fit: cover; /* 画像が枠に収まるように調整 */
+}
+
+.main-visual-text {
+    position: absolute; /* 絶対位置に設定 */
+    bottom: 20px; /* 下から20pxの位置に配置 */
+    right: 20px; /* 右から20pxの位置に配置 */
+    color: #ff69b4; /* テキストの色をピンクに設定 */
+    font-family: 'Noto Serif', sans-serif; /* フォントファミリを設定 */
+    text-align: right; /* テキストを右揃え */
+}
+
+.main-visual-text p {
+    margin: 0; /* マージンをなしにする */
+    font-size: 130px; /* フォントサイズを設定 */
+    line-height: 1.3; /* 行間を設定 */
+    position: relative; /* 相対位置に設定 */
+    top: -70px; /* 必要に応じてこの値を調整 */
+}
+
+.main-visual-text .main-visual-date {
+    font-size: 50px; /* 日付のフォントサイズを設定 */
+    position: relative; /* 相対位置に設定 */
+    top: -70px; /* 必要に応じてこの値を調整 */
+}
+
+/* スケジュールセクションのスタイル */
+.schedule-section {
+    padding: 40px 0; /* 上下のパディングを設定 */
+    background-color: #e0e0e0; /* 背景色を設定 */
+    width: 100%; /* 幅を100%に設定 */
+}
+
+.schedule-section .row {
+    display: flex; /* フレックスボックスレイアウトを使用 */
+    justify-content: space-between; /* 要素間の間隔を設定 */
+    flex-wrap: wrap; /* 要素を折り返す */
+}
+
+/* タイトルとサブタイトルのスタイル */
+.schedule-title, .event-title, .course-title {
+    font-size: 36px; /* フォントサイズを設定 */
+    font-family: 'Noto Serif', sans-serif; /* フォントファミリを設定 */
+    font-weight: bold; /* フォントウェイトを設定 */
+}
+
+.schedule-subtitle, .event-subtitle, .course-subtitle {
+    font-size: 18px; /* フォントサイズを設定 */
+    color: #666; /* テキストの色をグレーに設定 */
+    font-family: "Noto Serif JP", serif; /* フォントファミリを設定 */
+}
+
+/* アンダーバーのスタイル */
+.underline {
+    width: 150px; /* 幅を設定 */
+    height: 5px; /* 高さを設定 */
+    background-color: #666; /* 背景色をグレーに設定 */
+    margin: 10px auto; /* 上下のマージンを設定 */
+    margin-bottom: 30px; /* 下のマージンを設定 */
+}
+
+/* スケジュールカードのスタイル */
+.schedule-card {
+    background: white; /* 背景色を白に設定 */
+    border-radius: 5px; /* 角を丸くする */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 影をつける */
+    padding: 20px; /* パディングを設定 */
+    margin: 10px 0; /* 上下のマージンを設定 */
+    text-align: center; /* テキストを中央揃え */
+}
+
+.schedule-card-date {
+    font-size: 16px; /* フォントサイズを設定 */
+    color: #999; /* テキストの色をグレーに設定 */
+    font-family: 'Noto Serif', sans-serif; /* フォントファミリを設定 */
+}
+
+.schedule-card-day {
+    font-size: 24px; /* フォントサイズを設定 */
+    font-weight: bold; /* フォントウェイトを設定 */
+    margin: 10px 0; /* 上下のマージンを設定 */
+    font-family: 'Noto Serif', sans-serif; /* フォントファミリを設定 */
+}
+
+.schedule-note {
+    margin-top: 20px; /* 上のマージンを設定 */
+    font-size: 14px; /* フォントサイズを設定 */
+    color: #666; /* テキストの色をグレーに設定 */
+}
+
+/* ボタンのスタイル */
+.btn-info {
+    background-color: #17a2b8; /* ボタンの背景色を設定 */
+    color: white; /* ボタンのテキスト色を設定 */
+    border: none; /* 枠線をなしにする */
+    padding: 10px 20px; /* パディングを設定 */
+    border-radius: 5px; /* 角を丸くする */
+    font-family: 'Noto Serif', sans-serif; /* フォントファミリを設定 */
+}
+
+.btn-info:hover {
+    background-color: #138496; /* ホバー時の背景色を設定 */
+    border-color: #138496; /* ホバー時の枠線の色を設定 */
+}
+
+.btn-pink {
+    background-color: #ff69b4; /* ボタンの背景色を設定 */
+    color: white; /* ボタンのテキスト色を設定 */
+    border: none; /* 枠線をなしにする */
+    padding: 10px 20px; /* パディングを設定 */
+    border-radius: 5px; /* 角を丸くする */
+    font-family: 'Noto Serif', sans-serif; /* フォントファミリを設定 */
+}
+
+.btn-pink:hover {
+    background-color: #e055a0; /* ホバー時の背景色を設定 */
+    border-color: #e055a0; /* ホバー時の枠線の色を設定 */
+}
+
+/* イベントセクションのスタイル */
+.event-section {
+    padding: 40px 0; /* 上下のパディングを設定 */
+    background-color: #f0f0f0; /* 背景色を設定 */
+    width: 100%; /* 幅を100%に設定 */
+}
+
+/* イベントカードのスタイル */
+.event-card {
+    background: white; /* 背景色を白に設定 */
+    border-radius: 5px; /* 角を丸くする */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 影をつける */
+    padding: 20px; /* パディングを設定 */
+    margin: 10px 0; /* 上下のマージンを設定 */
+    text-align: center; /* テキストを中央揃え */
+    width: 90%; /* 幅を90%に設定 */
+}
+
+/* カードの画像スタイル */
+.card-img-top {
+    height: 270px; /* 高さを設定 */
+    object-fit: cover; /* 画像が枠に収まるように調整 */
+}
+
+.event-card-date {
+    font-size: 16px; /* フォントサイズを設定 */
+    color: #999; /* テキストの色をグレーに設定 */
+    font-family: 'Noto Serif', sans-serif; /* フォントファミリを設定 */
+}
+
+.event-card-title {
+    font-size: 24px; /* フォントサイズを設定 */
+    font-weight: bold; /* フォントウェイトを設定 */
+    margin: 10px 0; /* 上下のマージンを設定 */
+    font-family: 'Noto Serif', sans-serif; /* フォントファミリを設定 */
+}
+
+.event-note {
+    margin-top: 20px; /* 上のマージンを設定 */
+    font-size: 14px; /* フォントサイズを設定 */
+    color: #666; /* テキストの色をグレーに設定 */
+    font-family: "Noto Serif JP", serif; /* フォントファミリを設定 */
+}
+
+.event-target {
+    font-size: 16px; /* フォントサイズを設定 */
+    font-weight: bold; /* フォントウェイトを設定 */
+    margin-top: 10px; /* 上のマージンを設定 */
+    font-family: 'Noto Serif', sans-serif; /* フォントファミリを設定 */
+}
+
+/* イベントタイトルバーのスタイル */
+.event-title-bar, .event-title-bar2, .event-title-bar3 {
+    background-color: #FFB6C1; /* 背景色を設定 */
+    padding: 10px; /* パディングを設定 */
+    margin: 20px 0; /* 上下のマージンを設定 */
+    text-align: center; /* テキストを中央揃え */
+    color: white; /* テキストの色を白に設定 */
+    font-size: 24px; /* フォントサイズを設定 */
+    font-weight: bold; /* フォントウェイトを設定 */
+    font-family: "Noto Serif JP", serif; /* フォントファミリを設定 */
+}
+
+/* カードタイトルのスタイル */
+.card-title {
+    font-size: 24px; /* フォントサイズを設定 */
+    font-weight: bold; /* フォントウェイトを設定 */
+    color: #E0218A; /* テキストの色を設定 */
+    margin-bottom: 10px; /* 下のマージンを設定 */
+    font-family: "Noto Serif JP", serif; /* フォントファミリを設定 */
+}
+
+/* カードサブタイトルのスタイル */
+.card-subtitle {
+    font-size: 18px; /* フォントサイズを設定 */
+    color: #E0218A; /* テキストの色を設定 */
+    margin-bottom: 15px; /* 下のマージンを設定 */
+    font-family: "Noto Serif JP", serif; /* フォントファミリを設定 */
+}
+
+/* カードテキストのスタイル */
+.card-text {
+    font-size: 16px; /* フォントサイズを設定 */
+    color: #333; /* テキストの色を設定 */
+    font-family: "Noto Serif JP", serif; /* フォントファミリを設定 */
+}
+
+/* モデルコースボタンのスタイル */
+.btn-course {
+    background-color: #D70076; /* ボタンの背景色を設定 */
+    color: white; /* ボタンのテキスト色を設定 */
+    border: none; /* 枠線をなしにする */
+    padding: 10px 20px; /* パディングを設定 */
+    border-radius: 50px; /* 角を丸くする */
+    font-family: 'Noto Serif', sans-serif; /* フォントファミリを設定 */
+    font-size: 16px; /* フォントサイズを設定 */
+    text-align: center; /* テキストを中央揃え */
+    display: inline-block; /* インラインブロック要素として表示 */
+    cursor: pointer; /* カーソルをポインタにする */
+    transition: background-color 0.3s; /* 背景色の変更を0.3秒かけて行う */
+}
+
+.btn-course:hover {
+    background-color: #B00060; /* ホバー時の背景色を設定 */
+}
+
+/* カードコンテナのスタイル */
+.card-container {
+    margin-top: 20px; /* 上のマージンを設定 */
+    padding: 20px; /* パディングを設定 */
+}
+
+.card {
+    border-radius: 5px; /* 角を丸くする */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 影をつける */
+    margin-bottom: 20px; /* 下のマージンを設定 */
+}
+
+.card-title {
+    margin-top: 0; /* 上のマージンをなしにする */
+}
+
+.card img {
+    border-top-left-radius: 5px; /* 左上の角を丸くする */
+    border-top-right-radius: 5px; /* 右上の角を丸くする */
+}
+
+/* 学科セクションのスタイル */
+.course-section {
+    padding: 40px 0; /* 上下のパディングを設定 */
+    background-color: #e0e0e0; /* 背景色を変更 */
+    width: 100%; /* 横幅全体をカバーする */
+}
+
+/* 情報学部のスタイル */
+.title-zyouhou {
+    color: #007BFF; /* 青色を設定 */
+}
+.btn-zyouhou {
+    background-color: #007BFF; /* 背景色を青色に設定 */
+    border-color: #007BFF; /* 枠線の色を青色に設定 */
+    color: #FFFFFF; /* テキストの色を白に変更 */
+}
+.btn-zyouhou:hover {
+    background-color: #0069d9; /* ホバー時の背景色を濃い青色に設定 */
+    border-color: #0062cc; /* ホバー時の枠線の色を濃い青色に設定 */
+}
+
+/* 理工学部のスタイル */
+.title-rikou {
+    color: #9370DB; /* 紫色を設定 */
+}
+.btn-rikou {
+    background-color: #9370DB; /* 背景色を紫色に設定 */
+    border-color: #9370DB; /* 枠線の色を紫色に設定 */
+    color: #FFFFFF; /* テキストの色を白に変更 */
+}
+.btn-rikou:hover {
+    background-color: #805dcb; /* ホバー時の背景色を濃い紫色に設定 */
+}
+
+/* 農学部のスタイル */
+.title-nougaku {
+    color: #28A745; /* 緑色を設定 */
+}
+.btn-nougaku {
+    background-color: #28A745; /* 背景色を緑色に設定 */
+    border-color: #28A745; /* 枠線の色を緑色に設定 */
+    color: #FFFFFF; /* テキストの色を白に変更 */
+}
+.btn-nougaku:hover {
+    background-color: #218838; /* ホバー時の背景色を濃い緑色に設定 */
+    border-color: #1e7e34; /* ホバー時の枠線の色を濃い緑色に設定 */
+}
+
+/* 経済学部のスタイル */
+.title-keizai {
+    color: #808000; /* オリーブ色を設定 */
+}
+.btn-keizai {
+    background-color: #808000; /* 背景色をオリーブ色に設定 */
+    border-color: #808000; /* 枠線の色をオリーブ色に設定 */
+    color: #FFFFFF; /* テキストの色を白に変更 */
+}
+.btn-keizai:hover {
+    background-color: #6c6c00; /* ホバー時の背景色を濃いオリーブ色に設定 */
+    border-color: #626200; /* ホバー時の枠線の色を濃いオリーブ色に設定 */
+}
+
+/* 文学部のスタイル */
+.title-bungaku {
+    color: #FA8072; /* サーモン色を設定 */
+}
+.btn-bungaku {
+    background-color: #FA8072; /* 背景色をサーモン色に設定 */
+    border-color: #FA8072; /* 枠線の色をサーモン色に設定 */
+    color: #FFFFFF; /* テキストの色を白に変更 */
+}
+.btn-bungaku:hover {
+    background-color: #e56e60; /* ホバー時の背景色を濃いサーモン色に設定 */
+    border-color: #cc5e50; /* ホバー時の枠線の色を濃いサーモン色に設定 */
+}
+
+/* 社会学部のスタイル */
+.title-syakai {
+    color: #FFA500; /* オレンジ色を設定 */
+}
+.btn-syakai {
+    background-color: #FFA500; /* 背景色をオレンジ色に設定 */
+    border-color: #FFA500; /* 枠線の色をオレンジ色に設定 */
+    color: #FFFFFF; /* テキストの色を白に変更 */
+}
+.btn-syakai:hover {
+    background-color: #e59400; /* ホバー時の背景色を濃いオレンジ色に設定 */
+    border-color: #cc8400; /* ホバー時の枠線の色を濃いオレンジ色に設定 */
+}
+
+/* SNSセクションのスタイル */
+.sns-section {
+    padding: 40px 0; /* 上下のパディングを設定 */
+    background-color: #f0f0f0; /* 背景色を設定 */
+    width: 100%; /* 幅を100%に設定 */
+}
+
+.sns-title {
+    font-size: 36px; /* フォントサイズを設定 */
+    font-family: 'Noto Serif', sans-serif; /* フォントファミリを設定 */
+    font-weight: bold; /* フォントウェイトを設定 */
+}
+
+.sns-subtitle {
+    font-size: 18px; /* フォントサイズを設定 */
+    color: #666; /* テキストの色をグレーに設定 */
+    font-family: "Noto Serif JP", serif; /* フォントファミリを設定 */
+}
+
+.social-icons a {
+    margin: 0 10px; /* 左右のマージンを設定 */
+    color: #CC33CC; /* テキストの色を設定 */
+    font-size: 48px; /* フォントサイズを設定 */
+    transition: color 0.3s; /* 色の変更を0.3秒かけて行う */
+}
+
+.social-icons a:hover {
+    color: #B00099; /* ホバー時のテキストの色を設定 */
+}
+
+/* 資料請求セクションのスタイル */
+.request-documents-section {
+    padding: 40px 0; /* 上下のパディングを設定 */
+    background-color: #e0e0e0; /* 背景色を設定 */
+    width: 100%; /* 幅を100%に設定 */
+}
+
+.request-documents-title {
+    font-size: 36px; /* フォントサイズを設定 */
+    font-family: 'Noto Serif', sans-serif; /* フォントファミリを設定 */
+    font-weight: bold; /* フォントウェイトを設定 */
+}
+
+.request-documents-subtitle {
+    font-size: 18px; /* フォントサイズを設定 */
+    color: #666; /* テキストの色をグレーに設定 */
+    font-family: "Noto Serif JP", serif; /* フォントファミリを設定 */
+}
+
+.btn-request-documents {
+    background-color: #FD6C9E; /* ボタンの背景色を設定 */
+    color: white; /* ボタンのテキスト色を設定 */
+    border: none; /* 枠線をなしにする */
+    padding: 10px 20px; /* パディングを設定 */
+    border-radius: 50px; /* 角を丸くする */
+    font-family: 'Noto Serif', sans-serif; /* フォントファミリを設定 */
+    font-size: 16px; /* フォントサイズを設定 */
+    text-align: center; /* テキストを中央揃え */
+    display: inline-block; /* インラインブロック要素として表示 */
+    cursor: pointer; /* カーソルをポインタにする */
+    transition: background-color 0.3s; /* 背景色の変更を0.3秒かけて行う */
+}
+
+.btn-request-documents:hover {
+    background-color: #e45b8b; /* ホバー時の背景色を設定 */
+}
+
+/* お問い合わせセクションのスタイル */
+.contact-section {
+    padding: 40px 0; /* 上下のパディングを設定 */
+    background-color: #f0f0f0; /* 背景色を設定 */
+    width: 100%; /* 幅を100%に設定 */
+}
+
+.contact-title {
+    font-size: 36px; /* フォントサイズを設定 */
+    font-family: 'Noto Serif', sans-serif; /* フォントファミリを設定 */
+    font-weight: bold; /* フォントウェイトを設定 */
+}
+
+.contact-subtitle {
+    font-size: 18px; /* フォントサイズを設定 */
+    color: #666; /* テキストの色をグレーに設定 */
+    font-family: "Noto Serif JP", serif; /* フォントファミリを設定 */
+}
+
+.contact-info {
+    margin-top: 60px; /* 上のマージンを設定 */
+    font-size: 16px; /* フォントサイズを設定 */
+    color: #333; /* テキストの色を設定 */
+    font-family: "Noto Serif JP", serif; /* フォントファミリを設定 */
+    text-align: center; /* テキストを中央揃え */
+}
+
+.contact-info p {
+    margin: 5px 0; /* 上下のマージンを設定 */
+}
+
+/* フッターのスタイル */
+.footer {
+    background-color: #f8f9fa; /* 背景色を設定 */
+    padding: 40px 0; /* 上下のパディングを設定 */
+}
+
+.footer-logo {
+    width: 200px; /* 幅を設定 */
+    margin-bottom: 20px; /* 下のマージンを設定 */
+}
+
+.footer .social-icons a {
+    margin: 0 10px; /* 左右のマージンを設定 */
+    color: #6c757d; /* テキストの色を設定 */
+    font-size: 24px; /* フォントサイズを設定 */
+}
+
+.footer h5 {
+    font-size: 18px; /* フォントサイズを設定 */
+    margin-bottom: 10px; /* 下のマージンを設定 */
+}
+
+.footer p, .footer a {
+    color: #6c757d; /* テキストの色を設定 */
+    font-size: 14px; /* フォントサイズを設定 */
+}
+
+.footer .departments span {
+    display: inline-block; /* インラインブロック要素として表示 */
+    background-color: #6c757d; /* 背景色を設定 */
+    color: white; /* テキストの色を設定 */
+    padding: 5px 10px; /* パディングを設定 */
+    border-radius: 5px; /* 角を丸くする */
+    margin: 5px 0; /* 上下のマージンを設定 */
+}
+
+.footer .footer-links {
+    list-style: none; /* リストスタイルをなしにする */
+    padding: 0; /* パディングをなしにする */
+}
+
+.footer .footer-links li {
+    margin-bottom: 10px; /* 下のマージンを設定 */
+}
+
+.footer .footer-links a {
+    color: #6c757d; /* テキストの色を設定 */
+    text-decoration: none; /* テキストの装飾をなしにする */
+    font-size: 14px; /* フォントサイズを設定 */
+}
+
+.footer .footer-links a:hover {
+    text-decoration: underline; /* ホバー時のテキスト装飾を設定 */
+}
+
+.footer-bottom-links {
+    list-style: none; /* リストスタイルをなしにする */
+    padding: 0; /* パディングをなしにする */
+    margin: 20px 0; /* 上下のマージンを設定 */
+}
+
+.footer-bottom-links li {
+    display: inline; /* インライン要素として表示 */
+    margin: 0 10px; /* 左右のマージンを設定 */
+}
+
+.footer-bottom-links a {
+    color: #6c757d; /* テキストの色を設定 */
+    text-decoration: none; /* テキストの装飾をなしにする */
+    font-size: 14px; /* フォントサイズを設定 */
+}
+
+.footer-bottom-links a:hover {
+    text-decoration: underline; /* ホバー時のテキスト装飾を設定 */
+}
+
+/* ページトップボタンのスタイル */
+.page-top {
+    position: fixed; /* 固定位置に設定 */
+    bottom: 20px; /* 下端から20pxの位置に配置 */
+    right: 20px; /* 右端から20pxの位置に配置 */
+    width: 50px; /* 幅を設定 */
+    height: 50px; /* 高さを設定 */
+    background-color: #e0b2b2; /* 背景色を設定 */
+    border-radius: 50%; /* 角を丸くする */
+    display: none; /* 初期状態で非表示 */
+    justify-content: center; /* 水平方向の中央揃え */
+    align-items: center; /* 垂直方向の中央揃え */
+    text-decoration: none; /* テキストの装飾をなしにする */
+    color: white; /* テキストの色を設定 */
+    font-size: 24px; /* フォントサイズを設定 */
+    line-height: 1; /* 行間を設定 */
+}
+
+.page-top::before {
+    content: '\25B2'; /* 上向き矢印のUnicodeキャラクターを設定 */
+    font-size: 24px; /* フォントサイズを設定 */
+    color: white; /* 矢印の色を設定 */
+    display: flex; /* フレックスボックスレイアウトを使用 */
+    justify-content: center; /* 水平方向の中央揃え */
+    align-items: center; /* 垂直方向の中央揃え */
+    width: 100%; /* 幅を100%に設定 */
+    height: 100%; /* 高さを100%に設定 */
+    line-height: 50px; /* 行間を設定して中央揃え */
+}
